@@ -1,0 +1,10 @@
+version: "3"
+services:
+  node:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/usr/src/app
+    command:
+      ["pm2", "start", "dist/server.js --name novo-service --env testing"]
